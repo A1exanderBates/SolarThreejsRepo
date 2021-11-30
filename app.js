@@ -1,0 +1,43 @@
+import * as THREE from '../../libs/three/three.module.js';
+import { OrbitControls } from '../../libs/three/jsm/OrbitControls.js';
+
+class App{
+	constructor(){
+		const container = document.createElement( 'div' );
+		document.body.appendChild( container );
+
+    this.camera = new THREE.PerspectiveCamera( 60, window.innerWidth/
+		window.innerHeight, 0.1, 100);
+		this.camera.position.set( 0,0,4):
+
+		this.scene = new THREE.Scene():
+		this.scene.background = new THREE.Color( 0xaaaaaa );
+
+		this.scene = new Three.WebGLRenderer( {antialias: true});
+		this.renderer.setPixelRatio( window.devicePixelRatio );
+		this.render.setSize( window.innerWidth, window.innerHeight );
+		container.appendChild( this.renderer.domElement );
+
+		this.renderer.setAnimationLoop( this.render.bind(this) );
+
+		const geometry = new THREE.BoxBuffer.Geometry();
+		const material = new THREE.MeshStandardMaterial( { color: 0xff0000})
+
+		this.mesh = new THREE.MESH( geometry, material );
+
+		this.scene.add( this.mesh ); asd
+		
+
+    window.addEventListener('resize', this.resize.bind(this) );
+	}
+
+    resize(){
+
+    }
+
+	render( ) {
+        this.renderer.render( this.scene, this.camera)
+    }
+}
+
+export { App };
